@@ -26,6 +26,7 @@
       "dynamodb-charp-lambda/1.0.0": {
         "dependencies": {
           "AWSSDK.DynamoDBv2": "3.7.3.36",
+          "AWSSDK.SecretsManager": "3.7.2.47",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -318,11 +319,11 @@
           "dynamodb-charp-lambda.dll": {}
         }
       },
-      "AWSSDK.Core/3.7.11.4": {
+      "AWSSDK.Core/3.7.11.7": {
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {
             "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.7.11.4"
+            "fileVersion": "3.7.11.7"
           }
         },
         "compile": {
@@ -331,7 +332,7 @@
       },
       "AWSSDK.DynamoDBv2/3.7.3.36": {
         "dependencies": {
-          "AWSSDK.Core": "3.7.11.4"
+          "AWSSDK.Core": "3.7.11.7"
         },
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {
@@ -341,6 +342,20 @@
         },
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
+        }
+      },
+      "AWSSDK.SecretsManager/3.7.2.47": {
+        "dependencies": {
+          "AWSSDK.Core": "3.7.11.7"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.7.2.47"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -2108,12 +2123,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AWSSDK.Core/3.7.11.4": {
+    "AWSSDK.Core/3.7.11.7": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-okJonF38zIiJc62FoQLypnwdcspnurGmPpssc4nzKkSuy/BTkWHhUld++XK1Uy8z6i+2zf7bzgAo35uj6TPIsQ==",
-      "path": "awssdk.core/3.7.11.4",
-      "hashPath": "awssdk.core.3.7.11.4.nupkg.sha512"
+      "sha512": "sha512-mPoINGYFfYkwrevDQliYeQQJFqPAFQJ+wkEmSvC9yayckxRIoZhGVKOJuN1ly8VaaEbcNZgJHmqFtVAGnmOvyw==",
+      "path": "awssdk.core/3.7.11.7",
+      "hashPath": "awssdk.core.3.7.11.7.nupkg.sha512"
     },
     "AWSSDK.DynamoDBv2/3.7.3.36": {
       "type": "package",
@@ -2121,6 +2136,13 @@
       "sha512": "sha512-XjgeJo6VSAgJm2FmeqG76S5YCZSsjtn53sd9Ge8mHHI5iFeAqXqXPQFHpypHPXH5LqqVJBQQrsgEeVZE21LViQ==",
       "path": "awssdk.dynamodbv2/3.7.3.36",
       "hashPath": "awssdk.dynamodbv2.3.7.3.36.nupkg.sha512"
+    },
+    "AWSSDK.SecretsManager/3.7.2.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xJZj2ZV9Tb3MWBgZ20dOXvr4fH7i0+cd41M12hQhHBCYePNv3uV/HWnbLSZ37Lm5OrC+ipsK0Y4Z+vVI3nb8lw==",
+      "path": "awssdk.secretsmanager/3.7.2.47",
+      "hashPath": "awssdk.secretsmanager.3.7.2.47.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",

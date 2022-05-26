@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DataModel;
+using Amazon.SecretsManager;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -32,6 +33,7 @@ namespace dynamodb_charp_lambda.Controllers
         [HttpGet]
         public async Task<IEnumerable<WeatherForecast>> Get(string city = "Leeds")
         {
+            GetCountFromSecretsManagerAsync();
             return await _dynamoDBContext.
                 QueryAsync<WeatherForecast>(city, Amazon.DynamoDBv2.DocumentModel.QueryOperator.Between, new object[] {DateTime.UtcNow.Date, DateTime.UtcNow.Date.AddDays(2) })
                 .GetRemainingAsync();
@@ -60,6 +62,20 @@ namespace dynamodb_charp_lambda.Controllers
             await _dynamoDBContext.DeleteAsync(specificItem);
         }
 
+        public static async void GetCountFromSecretsManagerAsync()
+        {
+            // This is from https://www.youtube.com/watch?v=wIuP2RKy4z4&t=380s
+            // Also have a look at https://www.youtube.com/watch?v=PkLLP2tcd28&t=797s
+            // Also have a look at https://www.youtube.com/watch?v=bBMSL4vInYU
+            var client = new AmazonSecretsManagerClient();
+            var response = await client.GetSecretValueAsync(new Amazon.SecretsManager.Model.GetSecretValueRequest() 
+            {
+                SecretId = "MyCountSecret"
+            }
+            );
+            var count = int.Parse(response.SecretString);
+            Console.WriteLine("Count is " + count);
+        }
         private static IEnumerable<WeatherForecast> GenerateDummyWeatherForecast(string city)
         {
             var rng = new Random();

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "AWSSDK.Core/3.7.11.4": {
+      "AWSSDK.Core/3.7.11.7": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.1/AWSSDK.Core.dll": {}
@@ -21,6 +21,18 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll": {}
+        }
+      },
+      "AWSSDK.SecretsManager/3.7.2.47": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[3.7.11.7, 4.0.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
@@ -100,15 +112,15 @@
     }
   },
   "libraries": {
-    "AWSSDK.Core/3.7.11.4": {
-      "sha512": "okJonF38zIiJc62FoQLypnwdcspnurGmPpssc4nzKkSuy/BTkWHhUld++XK1Uy8z6i+2zf7bzgAo35uj6TPIsQ==",
+    "AWSSDK.Core/3.7.11.7": {
+      "sha512": "mPoINGYFfYkwrevDQliYeQQJFqPAFQJ+wkEmSvC9yayckxRIoZhGVKOJuN1ly8VaaEbcNZgJHmqFtVAGnmOvyw==",
       "type": "package",
-      "path": "awssdk.core/3.7.11.4",
+      "path": "awssdk.core/3.7.11.7",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "awssdk.core.3.7.11.4.nupkg.sha512",
+        "awssdk.core.3.7.11.7.nupkg.sha512",
         "awssdk.core.nuspec",
         "lib/net35/AWSSDK.Core.dll",
         "lib/net35/AWSSDK.Core.pdb",
@@ -148,6 +160,33 @@
         "lib/netstandard2.0/AWSSDK.DynamoDBv2.dll",
         "lib/netstandard2.0/AWSSDK.DynamoDBv2.pdb",
         "lib/netstandard2.0/AWSSDK.DynamoDBv2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AWSSDK.SecretsManager/3.7.2.47": {
+      "sha512": "xJZj2ZV9Tb3MWBgZ20dOXvr4fH7i0+cd41M12hQhHBCYePNv3uV/HWnbLSZ37Lm5OrC+ipsK0Y4Z+vVI3nb8lw==",
+      "type": "package",
+      "path": "awssdk.secretsmanager/3.7.2.47",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.SecretsManager.CodeAnalysis.dll",
+        "awssdk.secretsmanager.3.7.2.47.nupkg.sha512",
+        "awssdk.secretsmanager.nuspec",
+        "lib/net35/AWSSDK.SecretsManager.dll",
+        "lib/net35/AWSSDK.SecretsManager.pdb",
+        "lib/net35/AWSSDK.SecretsManager.xml",
+        "lib/net45/AWSSDK.SecretsManager.dll",
+        "lib/net45/AWSSDK.SecretsManager.pdb",
+        "lib/net45/AWSSDK.SecretsManager.xml",
+        "lib/netcoreapp3.1/AWSSDK.SecretsManager.dll",
+        "lib/netcoreapp3.1/AWSSDK.SecretsManager.pdb",
+        "lib/netcoreapp3.1/AWSSDK.SecretsManager.xml",
+        "lib/netstandard2.0/AWSSDK.SecretsManager.dll",
+        "lib/netstandard2.0/AWSSDK.SecretsManager.pdb",
+        "lib/netstandard2.0/AWSSDK.SecretsManager.xml",
         "tools/install.ps1",
         "tools/uninstall.ps1"
       ]
@@ -263,6 +302,7 @@
   "projectFileDependencyGroups": {
     "net5.0": [
       "AWSSDK.DynamoDBv2 >= 3.7.3.36",
+      "AWSSDK.SecretsManager >= 3.7.2.47",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
   },
@@ -308,6 +348,10 @@
           "AWSSDK.DynamoDBv2": {
             "target": "Package",
             "version": "[3.7.3.36, )"
+          },
+          "AWSSDK.SecretsManager": {
+            "target": "Package",
+            "version": "[3.7.2.47, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

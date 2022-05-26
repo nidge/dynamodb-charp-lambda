@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Hv8nckHPY/qNfRjVyLyo88+ccEWzIyhprifYgPIbaHHDrKmkbGnx7GHLiXTPCToX490s5hSBTdNtCezbhXLK2Q==",
+  "dgSpecHash": "a5vmf3K5P26yLxN5uU00zeHrIpRvnEmVpoMeDC6EikEhSAxKAyaB7eflUOi4t0fUe1GdIXTWkYCRXbL0QVJnwg==",
   "success": true,
   "projectFilePath": "C:\\Code\\aws\\dynamodb-charp-lambda\\dynamodb-charp-lambda.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nigel\\.nuget\\packages\\awssdk.core\\3.7.11.4\\awssdk.core.3.7.11.4.nupkg.sha512",
+    "C:\\Users\\Nigel\\.nuget\\packages\\awssdk.core\\3.7.11.7\\awssdk.core.3.7.11.7.nupkg.sha512",
     "C:\\Users\\Nigel\\.nuget\\packages\\awssdk.dynamodbv2\\3.7.3.36\\awssdk.dynamodbv2.3.7.3.36.nupkg.sha512",
+    "C:\\Users\\Nigel\\.nuget\\packages\\awssdk.secretsmanager\\3.7.2.47\\awssdk.secretsmanager.3.7.2.47.nupkg.sha512",
     "C:\\Users\\Nigel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Nigel\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Nigel\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
