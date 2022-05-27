@@ -3,11 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dynamodb_charp_lambda</RootNamespace>
+    <UserSecretsId>aca83c8f-e247-4b0c-be86-44efee441981</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.3.36" />
     <PackageReference Include="AWSSDK.SecretsManager" Version="3.7.2.47" />
+    <PackageReference Include="Kralizek.Extensions.Configuration.AWSSecretsManager" Version="1.6.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 

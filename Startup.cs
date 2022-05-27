@@ -30,12 +30,13 @@ namespace dynamodb_charp_lambda
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dynamodb_charp_lambda", Version = "v1" });
             });
+
+            services.AddOptions<SecretsOptions>().BindConfiguration("Secrets");
 
             var credentials = new BasicAWSCredentials("AKIAR5PTDWH762H7JM53", "LlqN/rCPomIoNLHrPSulPyCli2Ds2xL4ojZ4Se4W");
             var config = new AmazonDynamoDBConfig()
@@ -46,6 +47,12 @@ namespace dynamodb_charp_lambda
 
             services.AddSingleton <IAmazonDynamoDB>(client);
             services.AddSingleton<IDynamoDBContext, DynamoDBContext>();
+
+            //var builder = new ConfigurationBuilder();
+            //builder.AddSecretsManager(configurator: config =>
+            //{
+            //    config.KeyGenerator = (secret, name) => name.Replace("__", ":");
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +65,23 @@ namespace dynamodb_charp_lambda
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dynamodb_charp_lambda v1"));
             }
 
+            // This should be using the Secrets.cs file if in the development environment or the 
+            // AWS Secrets Manager (the key with __ in it) if not.  If this code isn't here, then we should be getting the
+            // code from appsettings.json.  It doesn't seem to work howvever - it is always getting the value from 
+            // appsettings.json, no matter if this code is here or not
+            var builder2 = new ConfigurationBuilder();
+            if (env.IsDevelopment())
+            {
+                builder2.AddUserSecrets<Program>();
+            }
+            else
+            {
+                builder2.AddSecretsManager(configurator: config =>
+                {
+                    config.KeyGenerator = (secret, name) => name.Replace("__", ":");
+                });
+            }
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -68,6 +92,8 @@ namespace dynamodb_charp_lambda
             {
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

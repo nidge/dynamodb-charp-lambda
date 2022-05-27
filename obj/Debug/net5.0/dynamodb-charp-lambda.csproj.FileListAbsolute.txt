@@ -30,3 +30,5 @@ C:\Code\aws\dynamodb-charp-lambda\obj\Debug\net5.0\ref\dynamodb-charp-lambda.dll
 C:\Code\aws\dynamodb-charp-lambda\obj\Debug\net5.0\dynamodb-charp-lambda.pdb
 C:\Code\aws\dynamodb-charp-lambda\obj\Debug\net5.0\dynamodb-charp-lambda.genruntimeconfig.cache
 C:\Code\aws\dynamodb-charp-lambda\bin\Debug\net5.0\AWSSDK.SecretsManager.dll
+C:\Code\aws\dynamodb-charp-lambda\bin\Debug\net5.0\Kralizek.Extensions.Configuration.AWSSecretsManager.dll
+C:\Code\aws\dynamodb-charp-lambda\bin\Debug\net5.0\Newtonsoft.Json.dll

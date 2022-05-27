@@ -14,6 +14,13 @@ namespace dynamodb_charp_lambda
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+
+            //var builder = new ConfigurationBuilder();
+            //builder.AddSecretsManager(configurator: config =>
+            //{
+            //    config.KeyGenerator = (secret, name) => name.Replace("__", ":");
+            //});
+            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
